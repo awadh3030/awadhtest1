@@ -1,8 +1,13 @@
 package javatest;
 import java.io.BufferedWriter;
-import java.io.File; 
+import java.io.Console;
+import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.Stack;
@@ -10,54 +15,27 @@ import java.util.Stack;
 
 
 
+
+
 public class Javatest1 {
+
 
 	public static void main(String[] args) {
 		
-	/*	Scanner sca = new Scanner(System.in);
+		Scanner sca = new Scanner(System.in);
 
 		
 		ArrayList<Department> DD = new ArrayList<Department>();
 		 Stack<String> stack = new Stack<String>();
+		 Department departmentObject0 = new Department();
+		 
+		
+	
+		
 		 
 		 boolean condition01 = true;
 
 			while (condition01) {
-				Department departmentObject0 = new Department();
-		
-		
-		System.out.println("Enter the Departmen Name ");
-		String departmentName = sca.next();
-		departmentObject0.setDepartName(departmentName);
-		
-		stack.push(departmentName);
-		
-		System.out.println("Enter the Departmen Number ");
-		int departmentnumber = sca.nextInt();
-		departmentObject0.setDepartId(departmentnumber);
-		
-		String department = Integer.toString(departmentnumber);
-		stack.push(department);
-		
-		DD.add(departmentObject0);
-		condition01 = false;
-			}*/
-		
-			
-		/*try {  
-		      BufferedWriter writer = new BufferedWriter(new FileWriter("filename.pdf"));  
-		      writer.write(" This my my text file ");
-		      for (String list : stack)
-		      {
-			      writer.write("\n"+list);
-
-		      }
-		      writer.close();
-		    } catch (IOException e) {
-		      System.out.println("An error occurred.");
-		      e.printStackTrace();  
-		
-			}*/
 			try
 			{
 			String[] Names = new String[100];
@@ -81,13 +59,13 @@ public class Javatest1 {
 			Names[17] = "17";
 			Names[18] = "18";
 			Names[19] = "19";
-			Names[20] = " 20";
-			Names[21] = " 21";
-			Names[22] = " 22";
-			Names[23] = " 23";
-			Names[24] = " 24";
-			Names[25] = " 25";
-			Names[26] = " 26";
+			Names[20] = "20";
+			Names[21] = "21";
+			Names[22] = "22";
+			Names[23] = "23";
+			Names[24] = "24";
+			Names[25] = "25";
+			Names[26] = "26";
 			Names[27] = "27";
 			Names[28] = "28";
 			Names[29] = "29";
@@ -167,7 +145,19 @@ public class Javatest1 {
 			{
 				BufferedWriter writer = new BufferedWriter(new FileWriter(Names[j]+".pdf"));
 				
-				System.out.println(writer);
+				
+				System.out.println("Enter the Departmen Name ");
+				String departmentName = sca.next();
+				departmentObject0.setDepartName(departmentName);
+				stack.push(departmentName);
+				
+				for (String list : stack)
+			      {
+				      writer.write("\n"+list);
+
+			      }
+				writer.close();
+				
 				File myObj = new File(Names[j]+".pdf");
 			    if (myObj.exists()) {
 			      System.out.println("File name: " + myObj.getName()); 
@@ -175,20 +165,68 @@ public class Javatest1 {
 			      System.out.println("Writeable: " + myObj.canWrite()); 
 			      System.out.println("Readable: " + myObj.canRead()); 
 			      System.out.println("File size in bytes: " + myObj.length());
-			    } else {
-			      System.out.println("The file does not exist.");
+			      
+			      
 			    }
-				
 			}
-			}
-			catch(Exception e)
+			}		
+			    catch(Exception e)
 			{
 			e.printStackTrace();
-		
-	}
+			}
 			
-			
-			
+			// search for word code is not working
+			/*String s;
+			FileReader fr = new FileReader(myObj); 
+			System.out.println("Enter the word ");
+			String input = sca.next(); 
+			 
+			int count=0;  
+			while((s=writer.readLine())!=null)   
+			{
+				  
+				
+			    for (String word : Names) 
+			    {
+			           if (word.equals(input))   
+			           {
+			             count++;   
+			           }
+			    }
+			}
+			if(count!=0) 
+			{
+			   System.out.println("The given word is present for "+count+ " Times in the file");
+			   try {
 
+				    Path path = Paths.get("C:\\Users\\Lenovo\\eclipse-workspace\\javatest");
+			  
+				    Files.createDirectories(path);
+
+				    System.out.println("Directory is created!");
+
+				  } catch (IOException e) {
+
+				    System.err.println("Failed to create directory!" + e.getMessage());
+
+				  }
+			}
+			else
+			{
+			   System.out.println("The given word is not present in the file");
+			}
+
+			   fr.close();
+			}
+			}	*/							
+			
+			
+			
+			
+			
 }
+	}
 }
+
+
+

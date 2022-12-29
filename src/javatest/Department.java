@@ -1,5 +1,7 @@
 package javatest;
 
+import java.io.FileReader;
+
 public class Department {
 	
 	private int departId;
