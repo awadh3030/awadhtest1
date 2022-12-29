@@ -146,7 +146,7 @@ public class Javatest1 {
 				BufferedWriter writer = new BufferedWriter(new FileWriter(Names[j]+".pdf"));
 				
 				
-				System.out.println("Enter the Departmen Name ");
+				System.out.println("Enter the word  ");
 				String departmentName = sca.next();
 				departmentObject0.setDepartName(departmentName);
 				stack.push(departmentName);
@@ -225,7 +225,7 @@ public class Javatest1 {
 			
 			
 }
-	}
+}
 }
 
 
